@@ -1,7 +1,7 @@
 # flutter_starterpack_jelly
 
 ```
-git clone
+git clone https://github.com/yogithesymbian/flutter_starterpack_jelly.git
 ```
 
 TODO
