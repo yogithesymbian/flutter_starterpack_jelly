@@ -1,0 +1,44 @@
+{
+  "response iterable to list": {
+    "prefix": "response-iterable-to-list",
+    "body": [
+      "(response['data']['${1:response}'] as Iterable)",
+      "          .map<${2:Models}>((e) => ${2:Models}.fromJson(e))",
+      "          .toList();"
+    ],
+    "description": "response iterable to list"
+  },
+  "consumer provider": {
+    "prefix": "screen-consumer-provider",
+    "body": [
+      "return Consumer<${1:ModelBrain}>(",
+      "      builder: (context, data${1:ModelBrain}, child) {",
+      "        return ListView.builder(",
+      "          itemBuilder: (context, index) {",
+      "            final data = data${1:ModelBrain}.data[index];",
+      "            return Container();",
+      "          },",
+      "        );",
+      "      },",
+      "    );"
+    ],
+    "description": "consumer provider"
+  },
+  "main multi provider body": {
+    "prefix": "main-provider",
+    "body": [
+      "ChangeNotifierProvider<${1:ModelBrain}>(",
+      "          create: (context) => ${1:ModelBrain}(),",
+      "          lazy: $false,",
+      "        )"
+    ],
+    "description": "main multi provider body"
+  },
+  "main routes body": {
+    "prefix": "main-routes",
+    "body": [
+      "${1:ScreenName}.id: (context) => ${1:ScreenName}(),"
+    ],
+    "description": "main routes body"
+  }
+}
