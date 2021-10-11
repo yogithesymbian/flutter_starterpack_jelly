@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_starterpack_jelly/services/reports/report_service.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = '/home_screen';
@@ -32,6 +33,40 @@ class _HomeScreenState extends State<HomeScreen> {
     path = (await getExternalStorageDirectory())!.path;
   }
 
+  Future<void> requestCameraPermission() async {
+    final serviceStatus = await Permission.camera.isGranted;
+
+    bool isCameraOn = serviceStatus == ServiceStatus.enabled;
+
+    final status = await Permission.camera.request();
+
+    if (status == PermissionStatus.granted) {
+      print('Permission Granted');
+    } else if (status == PermissionStatus.denied) {
+      print('Permission denied');
+    } else if (status == PermissionStatus.permanentlyDenied) {
+      print('Permission Permanently Denied');
+      await openAppSettings();
+    }
+  }
+
+  Future<void> requestLocationPermission() async {
+    final serviceStatusLocation = await Permission.locationWhenInUse.isGranted;
+
+    bool isLocation = serviceStatusLocation == ServiceStatus.enabled;
+
+    final status = await Permission.locationWhenInUse.request();
+
+    if (status == PermissionStatus.granted) {
+      print('Permission Granted');
+    } else if (status == PermissionStatus.denied) {
+      print('Permission denied');
+    } else if (status == PermissionStatus.permanentlyDenied) {
+      print('Permission Permanently Denied');
+      await openAppSettings();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final report_service = ReportService();
@@ -45,13 +80,30 @@ class _HomeScreenState extends State<HomeScreen> {
               try {
                 final request = await report_service.getExportToExcelData(
                     '2021-10-10', '2021-10-11');
-                File file = new File('$path/data.xlsx');
+                print('location : $path');
+                File file = new File('$path/2021-10-10_bi ngetrol.xlsx');
                 await file.writeAsBytes(request.bodyBytes);
               } catch (e) {
                 print('catch report_service : $e');
               }
             },
             child: Text('TEST DOWNLOAD XLSX'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              requestCameraPermission();
+            },
+            child: Text(
+              'request camera',
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              requestLocationPermission();
+            },
+            child: Text(
+              'request location',
+            ),
           ),
         ],
       ),
