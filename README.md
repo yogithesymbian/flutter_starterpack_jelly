@@ -4,6 +4,16 @@
 git clone https://github.com/yogithesymbian/flutter_starterpack_jelly.git
 ```
 
+```
+flutter pub run change_app_package_name:main com.new.package.name
+```
+
+```
+flutter_starterpack_jelly
+to
+new_name
+```
+
 TODO
 - [ ] dummy provider
 - [ ] home screen ( animated_bottom_navigation_bar )
