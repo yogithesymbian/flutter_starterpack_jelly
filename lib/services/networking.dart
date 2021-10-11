@@ -27,6 +27,15 @@ class NetworkingHelper {
     };
   }
 
+  Future getHeaderExcel() async {
+    return {
+      HttpHeaders.contentTypeHeader:
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      HttpHeaders.authorizationHeader: 'Bearer',
+      'x-access-token': '${await getToken()}'
+    };
+  }
+
   Future getData() async {
     http.Response response = await http.get(
       Uri.parse(
@@ -35,6 +44,16 @@ class NetworkingHelper {
       headers: await getHeader(),
     );
     return _handleResponse(response);
+  }
+
+  Future getDataBy2Param(String? param1, String? param2) async {
+    http.Response response = await http.get(
+      Uri.parse(
+        '${url.toString()}/$param1/$param2',
+      ),
+      headers: await getHeaderExcel(),
+    );
+    return response;
   }
 
   Future postData(body) async {
