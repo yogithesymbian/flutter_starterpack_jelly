@@ -38,7 +38,7 @@ class RoundedTextfield extends StatelessWidget {
             Icons.search,
             color: colorIcon,
           ),
-          suffixIcon: textEditingController!.text.isNotEmpty
+          suffixIcon: textEditingController?.text.isNotEmpty ?? false
               ? IconButton(
                   onPressed: textEditingController!.clear,
                   icon: Icon(

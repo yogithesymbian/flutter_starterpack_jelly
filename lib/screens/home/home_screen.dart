@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_starterpack_jelly/services/reports/report_service.dart';
+import 'package:flutter_starterpack_jelly/utils/constanta.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -16,96 +17,324 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late final String path;
-
   @override
   void initState() {
     super.initState();
-    initPlatformState();
-  }
-
-  Future<void> initPlatformState() async {
-    _setPath();
-    if (!mounted) return;
-  }
-
-  void _setPath() async {
-    path = (await getExternalStorageDirectory())!.path;
-  }
-
-  Future<void> requestCameraPermission() async {
-    final serviceStatus = await Permission.camera.isGranted;
-
-    bool isCameraOn = serviceStatus == ServiceStatus.enabled;
-
-    final status = await Permission.camera.request();
-
-    if (status == PermissionStatus.granted) {
-      print('Permission Granted');
-    } else if (status == PermissionStatus.denied) {
-      print('Permission denied');
-    } else if (status == PermissionStatus.permanentlyDenied) {
-      print('Permission Permanently Denied');
-      await openAppSettings();
-    }
-  }
-
-  Future<void> requestLocationPermission() async {
-    final serviceStatusLocation = await Permission.locationWhenInUse.isGranted;
-
-    bool isLocation = serviceStatusLocation == ServiceStatus.enabled;
-
-    final status = await Permission.locationWhenInUse.request();
-
-    if (status == PermissionStatus.granted) {
-      print('Permission Granted');
-    } else if (status == PermissionStatus.denied) {
-      print('Permission denied');
-    } else if (status == PermissionStatus.permanentlyDenied) {
-      print('Permission Permanently Denied');
-      await openAppSettings();
-    }
   }
 
   @override
   Widget build(BuildContext context) {
     final report_service = ReportService();
-    return Container(
-      color: Colors.white,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ElevatedButton(
-            onPressed: () async {
-              try {
-                final request = await report_service.getExportToExcelData(
-                    '2021-10-10', '2021-10-11');
-                print('location : $path');
-                File file = new File('$path/2021-10-10_bi ngetrol.xlsx');
-                await file.writeAsBytes(request.bodyBytes);
-              } catch (e) {
-                print('catch report_service : $e');
-              }
-            },
-            child: Text('TEST DOWNLOAD XLSX'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              requestCameraPermission();
-            },
-            child: Text(
-              'request camera',
+    return Scaffold(
+      body: Container(
+        child: SafeArea(
+          child: Container(
+            padding: const EdgeInsets.all(16.0),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          height: 8.0,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 4.0,
+                      ),
+                      Text('IMPORTANT'),
+                      const SizedBox(
+                        width: 4.0,
+                      ),
+                      Expanded(
+                        child: Divider(
+                          height: 8.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 8.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.splitscreen_sharp),
+                          label: Text(
+                            'SplashScreen',
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.filter_tilt_shift),
+                          label: Text(
+                            'OnBoarding',
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.auto_stories_sharp),
+                          label: Text(
+                            'Authentication',
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.data_saver_off),
+                          label: Text(
+                            'Preferences',
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.icecream_outlined),
+                          label: Text(
+                            'HomePage',
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              //
+                              ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.lock),
+                          label: Text(
+                            'Secure Storage',
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              //
+                              ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.perm_device_information_sharp),
+                          label: Text(
+                            'Permission Handler',
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.storage_rounded),
+                          label: Text(
+                            'Storage Management',
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.data_saver_on_sharp),
+                          label: Text(
+                            'CRUD Data',
+                            textAlign: TextAlign.center,
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.chat_rounded),
+                          label: Text(
+                            'Cloud Messaging',
+                            textAlign: TextAlign.center,
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 8.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          height: 8.0,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 4.0,
+                      ),
+                      Text('OPTIONAL'),
+                      const SizedBox(
+                        width: 4.0,
+                      ),
+                      Expanded(
+                        child: Divider(
+                          height: 8.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 8.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.personal_video_rounded),
+                          label: Text(
+                            'Provider',
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.block),
+                          label: Text(
+                            'BloC',
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.chat),
+                          label: Text(
+                            'NLP Bot Chat',
+                            textAlign: TextAlign.center,
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          icon: Icon(Icons.qr_code_2),
+                          label: Text(
+                            'QrCode All Type',
+                            textAlign: TextAlign.center,
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
-          ElevatedButton(
-            onPressed: () {
-              requestLocationPermission();
-            },
-            child: Text(
-              'request location',
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
