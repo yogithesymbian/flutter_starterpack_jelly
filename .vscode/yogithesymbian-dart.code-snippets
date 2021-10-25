@@ -35,10 +35,106 @@
     "description": "main multi provider body"
   },
   "main routes body": {
-    "prefix": "main-routes",
+    "prefix": "route-define",
     "body": [
       "${1:ScreenName}.id: (context) => ${1:ScreenName}(),"
     ],
-    "description": "main routes body"
+    "description": "main routes define | body"
+  },
+  "Navigator Push Named": {
+    "prefix": "nav-intent",
+    "body": [
+      "Navigator.pushNamed(context, ${1:Screen.id});"
+    ],
+    "description": "Navigator Push Named"
+  },
+  "text - for vscode spell": {
+    "prefix": "text",
+    "body": [
+      "Text('${1:string}'),"
+    ],
+    "description": "text - for vscode spell"
+  },
+  "Icon(Icons - for vscode spell": {
+    "prefix": "icon",
+    "body": [
+      "Icon(Icons.${1:icon_name}),"
+    ],
+    "description": "Icon(Icons - for vscode spell"
+  },
+  "route id": {
+    "prefix": "route-id",
+    "body": [
+      "static const String id = '/${1:route_name}';"
+    ],
+    "description": "route id"
+  },
+  "statefull widget - modified": {
+    "prefix": "stf-modified",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "",
+      "class ${1:PageName}Screen extends StatefulWidget {",
+      "  static const String id = '/${2:route_name}';",
+      "  const ${1:PageName}Screen({Key? key}) : super(key: key);",
+      "",
+      "  @override",
+      "  _${1:PageName}ScreenState createState() => _${1:PageName}ScreenState();",
+      "}",
+      "",
+      "class _${1:PageName}ScreenState extends State<${1:PageName}Screen> {",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Container(",
+      "      ${3:code_here}",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "statefull widget - modified"
+  },
+  "stateless widget - modified": {
+    "prefix": "stl-modified",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "",
+      "class ${1:PageName}Screen extends StatelessWidget {",
+      "  const ${1:PageName}Screen({ Key? key }) : super(key: key);",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Container(",
+      "      ${2:code_here}",
+      "    );",
+      "  }",
+      "}"
+    ],
+    "description": "stateless widget - modified"
+  },
+  "size media query context": {
+    "prefix": "size-mediaquery",
+    "body": [
+      "final size = MediaQuery.of(context).size;"
+    ],
+    "description": "size media query context"
+  },
+  "void async": {
+    "prefix": "void-async",
+    "body": [
+      "void ${1:funcName}() async {",
+      "  ${2:code_here}",
+      "}"
+    ],
+    "description": "void async"
+  },
+  "void no async": {
+    "prefix": "void-no-async",
+    "body": [
+      "void ${1:funcName}() {",
+      "  ${2:code_here}",
+      "}"
+    ],
+    "description": "void no async"
   }
 }

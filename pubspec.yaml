@@ -33,6 +33,7 @@ dependencies:
   shared_preferences: ^2.0.8
   sizer: ^2.0.15
   permission_handler: ^8.2.2
+  # fxendit: ^0.0.2
 
 
 dev_dependencies:

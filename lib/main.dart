@@ -1,7 +1,9 @@
+import 'package:flutter_starterpack_jelly/screens/crud/main_crud_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/home/home_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/auth/login_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/introduction/on_boarding_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/splash/splash_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/payment/xendit_payment_screen.dart';
 import 'package:flutter_starterpack_jelly/utils/anim/transition_route_observer.dart';
 import 'package:flutter_starterpack_jelly/utils/class/custom_theme.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
           OnBoardingScreen.id: (context) => OnBoardingScreen(),
           LoginScreen.id: (context) => LoginScreen(),
           HomeScreen.id: (context) => HomeScreen(),
+          XenditPaymentScreen.id: (context) => XenditPaymentScreen(),
+          MainCrudScreen.id: (context) => MainCrudScreen(),
         },
       );
     });

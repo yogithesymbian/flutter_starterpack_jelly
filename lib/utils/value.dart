@@ -1,7 +1,7 @@
 const kApiKey = 'ec897e425944c2374c8da90a5f87015a';
-const kApiUri = 'http://127.0.0.1:3001';
+// const kApiUri = 'http://127.0.0.1:3001';
 // const kApiUri = 'http://x.x.x.x:3003';
-// const kApiUri = 'http://192.168.1.19:3001';
+const kApiUri = 'http://192.168.216.190:3001';
 // const kApiUri = 'http://192.168.43.20:3001';
 const kBearer = 'bearer';
 const kEmail = 'email';

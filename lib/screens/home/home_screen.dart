@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_starterpack_jelly/screens/crud/main_crud_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/payment/xendit_payment_screen.dart';
 import 'package:flutter_starterpack_jelly/services/reports/report_service.dart';
 import 'package:flutter_starterpack_jelly/utils/constanta.dart';
 import 'package:path_provider/path_provider.dart';
@@ -204,7 +206,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Expanded(
                         child: ElevatedButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, MainCrudScreen.id);
+                          },
                           icon: Icon(Icons.data_saver_on_sharp),
                           label: Text(
                             'CRUD Data',
@@ -321,6 +325,28 @@ class _HomeScreenState extends State<HomeScreen> {
                           icon: Icon(Icons.qr_code_2),
                           label: Text(
                             'QrCode All Type',
+                            textAlign: TextAlign.center,
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.pushNamed(
+                                context, XenditPaymentScreen.id);
+                          },
+                          icon: Icon(Icons.qr_code_2),
+                          label: Text(
+                            'Xendit - Payment Gateway',
                             textAlign: TextAlign.center,
                             style: kTitleText.copyWith(
                               fontSize: 11.0,

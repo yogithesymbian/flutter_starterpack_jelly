@@ -59,11 +59,11 @@ class AuthService {
     final secureStorage = SecureStorage();
     await secureStorage.writeSecureData(
       kEmail,
-      response['data']['user']['email'],
+      response['user']['email'],
     );
     await secureStorage.writeSecureData(
       kBearer,
-      response['data']['accessToken'],
+      response['accessToken'],
     );
   }
 }
