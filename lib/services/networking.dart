@@ -27,6 +27,14 @@ class NetworkingHelper {
     };
   }
 
+  Future getHeaderMidtrans() async {
+    return {
+      HttpHeaders.contentTypeHeader: 'application/json',
+      HttpHeaders.authorizationHeader: 'Basic',
+      'Authorization': 'Basic xxxx'
+    };
+  }
+
   Future getHeaderExcel() async {
     return {
       HttpHeaders.contentTypeHeader:
@@ -68,10 +76,10 @@ class NetworkingHelper {
     return _handleResponse(response);
   }
 
-  Future putReplaceOrCreateData(body, int id) async {
+  Future putReplaceOrCreateData(body) async {
     http.Response response = await http.put(
       Uri.parse(
-        '${url.toString()}/$id',
+        '$url',
       ),
       headers: await getHeader(),
       body: body,
@@ -79,10 +87,10 @@ class NetworkingHelper {
     return _handleResponse(response);
   }
 
-  Future patchUpdateData(body, int id) async {
+  Future patchUpdateData(body) async {
     http.Response response = await http.patch(
       Uri.parse(
-        '${url.toString()}/$id',
+        '$url',
       ),
       headers: await getHeader(),
       body: body,
@@ -90,10 +98,10 @@ class NetworkingHelper {
     return _handleResponse(response);
   }
 
-  Future deleteData(int id) async {
+  Future deleteData() async {
     http.Response response = await http.delete(
       Uri.parse(
-        '${url.toString()}/$id',
+        '$url',
       ),
       headers: await getHeader(),
     );
@@ -108,5 +116,18 @@ class NetworkingHelper {
       // print('response : ${response.statusCode}');
       return jsonDecode(response.body);
     }
+  }
+
+  // customize
+  Future postDataPayment(body) async {
+    // create data
+    http.Response response = await http.post(
+      Uri.parse(
+        url.toString(),
+      ),
+      headers: await getHeaderMidtrans(),
+      body: body,
+    );
+    return _handleResponse(response);
   }
 }

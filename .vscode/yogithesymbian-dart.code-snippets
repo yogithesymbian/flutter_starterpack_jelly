@@ -136,5 +136,124 @@
       "}"
     ],
     "description": "void no async"
+  },
+  "text field widget modified": {
+    "prefix": "text-field-modified ( widget )",
+    "body": [
+      "TextField(",
+      "  autofocus: false,",
+      "  style: kTextFieldTextStyle.copyWith(",
+      "    color: kPrimaryColor,",
+      "  ),",
+      "  // keyboardType: TextInputType.emailAddress,",
+      "  cursorColor: kPrimaryColor,",
+      "  decoration: kInputDecoration.copyWith(",
+      "    hintText: '${1:hint_text}',",
+      "    // prefixIcon: Icon(",
+      "    //  Icons.email,",
+      "    //  color: kPrimaryColor,",
+      "    // ),",
+      "    suffixIcon: ${2:name_controller}Controller.text.isNotEmpty",
+      "        ? IconButton(",
+      "            onPressed: ${2:name_controller}Controller.clear,",
+      "            icon: Icon(",
+      "              Icons.clear,",
+      "              color: kPrimaryColor,",
+      "            ),",
+      "          )",
+      "        : null,",
+      "  ),",
+      "  textInputAction: TextInputAction.next,",
+      "  controller: ${2:name_controller}Controller,",
+      "),"
+    ],
+    "description": "text field widget modified"
+  },
+  "text field define modified": {
+    "prefix": "text-define-modified",
+    "body": [
+      "TextEditingController ${1:name_controller}Controller = TextEditingController();"
+    ],
+    "description": "text field define modified"
+  },
+  "class service initialize": {
+    "prefix": "service-class-init",
+    "body": [
+      "import 'package:flutter_starterpack_jelly/services/networking.dart';",
+      "import 'package:flutter_starterpack_jelly/utils/value.dart';",
+      "",
+      "const uri${1:uri_name} = '/api/${2:uri}';",
+      "",
+      "class ${3:ClassName}Service {",
+      "  NetworkingHelper? _networkingHelper;",
+      "  String? uriData = '$$kApiUri$$uri${1:uri_name}';",
+      "",
+      "  Future<dynamic> getData() async {",
+      "    // debug",
+      "    print('uri : $$uriData');",
+      "    // set uri",
+      "    _networkingHelper = NetworkingHelper(",
+      "      url: '$$uriData',",
+      "    );",
+      "    // execute action",
+      "    return await _networkingHelper?.getData();",
+      "  }",
+      "  Future<dynamic> postData(${4:DataClass} body) async {",
+      "    // debug",
+      "    print('uri : $$uriData');",
+      "    // set uri",
+      "    _networkingHelper = NetworkingHelper(",
+      "      url: '$$uriData',",
+      "    );",
+      "    // execute action",
+      "    return await _networkingHelper?.postData(body);",
+      "  }",
+      "  Future<dynamic> putData(${4:DataClass} body, int id) async {",
+      "    // debug",
+      "    print('uri : $$uriData/$$id');",
+      "    // set uri",
+      "    _networkingHelper = NetworkingHelper(",
+      "      url: '$$uriData/$$id',",
+      "    );",
+      "    // execute action",
+      "    return await _networkingHelper?.putReplaceOrCreateData(body);",
+      "  }",
+      "  Future<dynamic> patchData(${4:DataClass} body, int id) async {",
+      "    // debug",
+      "    print('uri : $$uriData/$$id');",
+      "    // set uri",
+      "    _networkingHelper = NetworkingHelper(",
+      "      url: '$$uriData/$$id',",
+      "    );",
+      "    // execute action",
+      "    return await _networkingHelper?.patchUpdateData(body);",
+      "  }",
+      "  Future<dynamic> deleteData(int id) async {",
+      "    // debug",
+      "    print('uri : $$uriData/$$id');",
+      "    // set uri",
+      "    _networkingHelper = NetworkingHelper(",
+      "      url: '$$uriData/$$id',",
+      "    );",
+      "    // execute action",
+      "    return await _networkingHelper?.deleteData();",
+      "  }",
+      "}"
+    ],
+    "description": "class service initialize"
+  },
+  "context provider read": {
+    "prefix": "context-provider-read",
+    "body": [
+      "final ${1:name}BrainR = context.read<${2:Name}Brain>();"
+    ],
+    "description": "context provider read"
+  },
+  "context provider watch": {
+    "prefix": "context-provider-watch",
+    "body": [
+      "final ${1:name}BrainW = context.watch<${2:Name}Brain>();"
+    ],
+    "description": "context provider watch"
   }
 }
