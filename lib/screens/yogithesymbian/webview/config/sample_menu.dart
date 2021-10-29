@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_starterpack_jelly/screens/webview/webview_sample_screen.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../webview_sample_screen.dart';
 import 'menu_option.dart';
 
 class SampleMenu extends StatelessWidget {

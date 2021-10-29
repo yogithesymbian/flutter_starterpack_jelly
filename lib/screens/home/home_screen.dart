@@ -1,18 +1,15 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_starterpack_jelly/screens/crud/main_crud_screen.dart';
-import 'package:flutter_starterpack_jelly/screens/payment/midtrans_payment_screen.dart';
-import 'package:flutter_starterpack_jelly/screens/webview/payment/webview_midtrans_payment_screen.dart';
-import 'package:flutter_starterpack_jelly/screens/payment/xendit_payment_screen.dart';
-import 'package:flutter_starterpack_jelly/screens/webview/webview_sample_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/importants/auth/login_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/importants/introduction/on_boarding_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/importants/splash/splash_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/crud/main_crud_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/payment/midtrans_payment_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/payment/xendit_payment_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/webview/webview_sample_screen.dart';
 import 'package:flutter_starterpack_jelly/services/reports/report_service.dart';
 import 'package:flutter_starterpack_jelly/utils/constanta.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = '/home_screen';
@@ -73,7 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Expanded(
                         child: ElevatedButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, SplashScreen.id);
+                          },
                           icon: Icon(Icons.splitscreen_sharp),
                           label: Text(
                             'SplashScreen',
@@ -88,7 +87,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Expanded(
                         child: ElevatedButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, OnBoardingScreen.id);
+                          },
                           icon: Icon(Icons.filter_tilt_shift),
                           label: Text(
                             'OnBoarding',
@@ -106,7 +107,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Expanded(
                         child: ElevatedButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, LoginScreen.id);
+                          },
                           icon: Icon(Icons.auto_stories_sharp),
                           label: Text(
                             'Authentication',

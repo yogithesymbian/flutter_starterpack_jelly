@@ -31,7 +31,8 @@ class NetworkingHelper {
     return {
       HttpHeaders.contentTypeHeader: 'application/json',
       HttpHeaders.authorizationHeader: 'Basic',
-      'Authorization': 'Basic xxxx'
+      'Authorization':
+          'Basic U0ItTWlkLXNlcnZlci1ocWFSYk5iRDlHTHBPdTNtc0lCUlNKMGs6'
     };
   }
 

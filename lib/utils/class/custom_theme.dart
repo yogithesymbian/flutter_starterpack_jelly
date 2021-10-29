@@ -104,7 +104,7 @@ class CustomTheme {
       accentColorBrightness: Brightness.light,
       scaffoldBackgroundColor: Color(0xffB5BFD3),
       // bottomAppBarColor: kColorOrange,
-      bottomAppBarColor: Color(0xff6D42CE),
+      bottomAppBarColor: Color(0xFF757575),
       cardColor: Colors.white,
       dividerColor: Color(0x1f6D42CE),
       focusColor: Color(0x1aF5E0C3),

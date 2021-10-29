@@ -18,6 +18,7 @@
       "            final data = data${1:ModelBrain}.data[index];",
       "            return Container();",
       "          },",
+      "          itemCount: dataScoreBrain.count,",
       "        );",
       "      },",
       "    );"
