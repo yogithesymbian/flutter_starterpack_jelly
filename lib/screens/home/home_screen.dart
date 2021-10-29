@@ -231,6 +231,24 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Expanded(
                         child: ElevatedButton.icon(
+                          onPressed: () {
+                            // Navigator.pushNamed(context, MainCrudScreen.id);
+                          },
+                          icon: Icon(Icons.data_saver_on_sharp),
+                          label: Text(
+                            'Search Data',
+                            textAlign: TextAlign.center,
+                            style: kTitleText.copyWith(
+                              fontSize: 11.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Expanded(
+                        child: ElevatedButton.icon(
                           onPressed: () {},
                           icon: Icon(Icons.chat_rounded),
                           label: Text(
