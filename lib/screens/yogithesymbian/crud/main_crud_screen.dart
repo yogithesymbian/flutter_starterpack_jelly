@@ -80,6 +80,12 @@ class _MainCrudScreenState extends State<MainCrudScreen> {
           showModalBottomSheet(
             context: context,
             isScrollControlled: true, // modal take up the full screen:
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(30.0),
+              ),
+            ),
+            clipBehavior: Clip.antiAliasWithSaveLayer,
             builder: (context) => SingleChildScrollView(
               // To have the AddTaskScreen sit just above the keyboard, you can wrap it inside a SingleChildScrollView, which determines the padding at the bottom using a MediaQuery.
               padding: EdgeInsets.only(
@@ -134,6 +140,12 @@ class _MainCrudScreenState extends State<MainCrudScreen> {
                       context: context,
                       isScrollControlled:
                           true, // modal take up the full screen:
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(30.0),
+                        ),
+                      ),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
                       builder: (context) => SingleChildScrollView(
                         // To have the AddTaskScreen sit just above the keyboard, you can wrap it inside a SingleChildScrollView, which determines the padding at the bottom using a MediaQuery.
                         padding: EdgeInsets.only(

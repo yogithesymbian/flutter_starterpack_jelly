@@ -5,10 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_starterpack_jelly/models/scores/score_brain.dart';
 import 'package:flutter_starterpack_jelly/models/scores/score_data_response.dart';
 import 'package:flutter_starterpack_jelly/services/crud/score_service.dart';
+import 'package:flutter_starterpack_jelly/utils/colors.dart';
 import 'package:flutter_starterpack_jelly/utils/constanta.dart';
 import 'package:flutter_starterpack_jelly/utils/decimal_text_input_formatter.dart';
 import 'package:provider/src/provider.dart';
 import 'package:pull_to_refresh/src/smart_refresher.dart';
+import 'package:sizer/sizer.dart';
 
 class AddCrudScreen extends StatelessWidget {
   final taskMsgController = TextEditingController();
@@ -20,69 +22,85 @@ class AddCrudScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final scoreBrainR = context.read<ScoreBrain>();
     return Container(
-      color: Color(0xFF757575),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30.0),
-            topRight: Radius.circular(30.0),
-          ),
-          color: Colors.white,
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              Text(
-                'SCORE',
-                style: TextStyle(
-                  color: Colors.lightBlue,
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              SizedBox(
-                height: 32.0,
-              ),
-              TextField(
-                autofocus: true,
-                style: kTextFieldTextStyle,
-                decoration: kInputDecoration.copyWith(
-                  hintText: 'add your score, ex: 89.5',
-                  prefixIcon: Icon(Icons.add_task_rounded),
-                  suffixIcon: IconButton(
-                    onPressed: taskMsgController.clear,
-                    icon: Icon(Icons.clear),
-                  ),
-                ),
-                keyboardType: TextInputType.numberWithOptions(decimal: true),
-                inputFormatters: [DecimalTextInputFormatter()],
-                textInputAction: TextInputAction.done,
-                controller: taskMsgController,
-                onSubmitted: (value) {
-                  taskMsgController.clear();
-                },
-              ),
-              SizedBox(
-                height: 32.0,
-              ),
-              ElevatedButton.icon(
-                onPressed: () {
-                  postData(scoreBrainR);
-                  actionDone(context);
-                },
-                icon: Icon(Icons.add),
-                label: Text('ADD'),
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(16.0),
+      color: Colors.white,
+      child: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () => Navigator.pop(context),
+                    child: Icon(
+                      Icons.close,
+                      color: Colors.red,
                     ),
                   ),
+                  Text(
+                    'SCORE',
+                    style: TextStyle(
+                      color: Colors.lightBlue,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      postData(scoreBrainR);
+                      actionDone(context);
+                    },
+                    child: Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 32.0,
+            ),
+            TextField(
+              autofocus: true,
+              style: kTextFieldTextStyle,
+              decoration: kInputDecoration.copyWith(
+                hintText: 'add your score, ex: 89.5',
+                prefixIcon: Icon(Icons.add_task_rounded),
+                suffixIcon: IconButton(
+                  onPressed: taskMsgController.clear,
+                  icon: Icon(Icons.clear),
                 ),
               ),
-            ],
-          ),
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              inputFormatters: [DecimalTextInputFormatter()],
+              textInputAction: TextInputAction.done,
+              controller: taskMsgController,
+              onSubmitted: (value) {
+                taskMsgController.clear();
+              },
+            ),
+            SizedBox(
+              height: 2.h,
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                postData(scoreBrainR);
+                actionDone(context);
+              },
+              icon: Icon(Icons.add),
+              label: Text('ADD'),
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(16.0),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
