@@ -3,6 +3,7 @@ import 'package:flutter_starterpack_jelly/screens/importants/auth/login_screen.d
 import 'package:flutter_starterpack_jelly/screens/importants/introduction/on_boarding_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/splash/splash_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/crud/main_crud_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/permission_handler/permission_handler_screen.dart';
 import 'package:flutter_starterpack_jelly/utils/constanta.dart';
 
 class ImportantScreen extends StatelessWidget {
@@ -181,7 +182,9 @@ class ImportantScreen extends StatelessWidget {
           children: [
             Expanded(
               child: ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, PermissionHandlerScreen.id);
+                },
                 icon: Icon(Icons.perm_device_information_sharp),
                 label: Text(
                   'Permission Handler',

@@ -41,7 +41,20 @@ class OptionalScreen extends StatelessWidget {
           children: [
             Expanded(
               child: ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('CRUD Data using provider #important'),
+                      action: SnackBarAction(
+                        // textColor: ,
+                        label: '',
+                        onPressed: () {
+                          // Some code to undo the change.
+                        },
+                      ),
+                    ),
+                  );
+                },
                 icon: Icon(Icons.personal_video_rounded),
                 label: Text(
                   'Provider',

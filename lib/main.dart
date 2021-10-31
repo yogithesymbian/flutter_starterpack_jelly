@@ -5,6 +5,7 @@ import 'package:flutter_starterpack_jelly/screens/importants/auth/login_screen.d
 import 'package:flutter_starterpack_jelly/screens/importants/introduction/on_boarding_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/splash/splash_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/crud/main_crud_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/permission_handler/permission_handler_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional/webview/payment/webview_midtrans_payment_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional/webview/webview_sample_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/ui/responsive_card/main_responsive_screen.dart';
@@ -56,6 +57,7 @@ class MyApp extends StatelessWidget {
                 WebViewMidtransPaymentScreen(),
             MainCrudScreen.id: (context) => MainCrudScreen(),
             MainResponsiveScreen.id: (context) => MainResponsiveScreen(),
+            PermissionHandlerScreen.id: (context) => PermissionHandlerScreen(),
           },
         );
       }),

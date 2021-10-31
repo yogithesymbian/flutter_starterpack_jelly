@@ -10,6 +10,8 @@ class MainResponsiveScreen extends StatelessWidget {
     final orientation = MediaQuery.of(context).orientation;
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      // This is handled by the search bar itself.
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text(
           'Wallet Your WIFE',
@@ -19,7 +21,6 @@ class MainResponsiveScreen extends StatelessWidget {
       backgroundColor: Color(0xFF212239),
       body: Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: 30.0,
           horizontal: 20.0,
         ),
         child: Column(
