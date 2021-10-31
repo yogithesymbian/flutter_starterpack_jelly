@@ -3,11 +3,12 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_starterpack_jelly/models/scores/score_brain.dart';
 import 'package:flutter_starterpack_jelly/models/scores/score_data_response.dart';
-import 'package:flutter_starterpack_jelly/screens/yogithesymbian/crud/add_crud_screen.dart';
-import 'package:flutter_starterpack_jelly/screens/yogithesymbian/crud/detail_crud_screen.dart';
 import 'package:flutter_starterpack_jelly/services/crud/score_service.dart';
 import 'package:provider/provider.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+
+import 'add_crud_screen.dart';
+import 'detail_crud_screen.dart';
 
 class MainCrudScreen extends StatefulWidget {
   static const String id = '/main_crud_screen';
@@ -157,11 +158,28 @@ class _MainCrudScreenState extends State<MainCrudScreen> {
                       ),
                     );
                   },
-                  child: Container(
-                    color: Colors.white,
-                    padding: EdgeInsets.all(16.0),
-                    child: Text(
-                        '$index . ID : ${data?[index].id} Data score : ${data?[index].score}'),
+                  child: Dismissible(
+                    key: ValueKey(data?[index]),
+                    onDismissed: (DismissDirection direction) {
+                      print('onDismis $direction');
+                      print('onDismis $index');
+                      // setState(() {
+                      // items.removeAt(index);
+                      // });
+                    },
+                    background: Container(
+                      color: Colors.green,
+                    ),
+                    secondaryBackground: Container(
+                      color: Colors.red,
+                    ),
+                    child: Container(
+                      color: Colors.white,
+                      width: double.infinity,
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                          '$index . ID : ${data?[index].id} Data score : ${data?[index].score}'),
+                    ),
                   ),
                 );
               },

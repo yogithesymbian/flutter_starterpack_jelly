@@ -1,6 +1,6 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter_starterpack_jelly/components/background_gradient_with_frame.dart';
-import 'package:flutter_starterpack_jelly/screens/home/home_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/home_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/auth/login_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/introduction/on_boarding_screen.dart';
 import 'package:flutter_starterpack_jelly/services/preference/user_preference.dart';

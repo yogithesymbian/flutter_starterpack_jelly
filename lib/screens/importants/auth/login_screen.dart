@@ -1,4 +1,4 @@
-import 'package:flutter_starterpack_jelly/screens/home/home_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/home_screen.dart';
 import 'package:flutter_starterpack_jelly/services/auth/auth_service.dart';
 import 'package:flutter_starterpack_jelly/services/storage/storage.dart';
 import 'package:flutter_starterpack_jelly/utils/colors.dart';

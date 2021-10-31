@@ -1,20 +1,21 @@
 import 'package:flutter_starterpack_jelly/models/midtrans/midtrans_brain.dart';
 import 'package:flutter_starterpack_jelly/models/scores/score_brain.dart';
-import 'package:flutter_starterpack_jelly/screens/home/home_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/home_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/auth/login_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/introduction/on_boarding_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/splash/splash_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/crud/main_crud_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional/webview/payment/webview_midtrans_payment_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional/webview/webview_sample_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/ui/responsive_card/main_responsive_screen.dart';
 import 'package:flutter_starterpack_jelly/utils/anim/transition_route_observer.dart';
 import 'package:flutter_starterpack_jelly/utils/class/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 
-import 'screens/yogithesymbian/crud/main_crud_screen.dart';
 import 'screens/yogithesymbian/payment/midtrans_payment_screen.dart';
 import 'screens/yogithesymbian/payment/xendit_payment_screen.dart';
-import 'screens/yogithesymbian/webview/payment/webview_midtrans_payment_screen.dart';
-import 'screens/yogithesymbian/webview/webview_sample_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
             WebViewMidtransPaymentScreen.id: (context) =>
                 WebViewMidtransPaymentScreen(),
             MainCrudScreen.id: (context) => MainCrudScreen(),
+            MainResponsiveScreen.id: (context) => MainResponsiveScreen(),
           },
         );
       }),

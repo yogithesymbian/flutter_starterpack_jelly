@@ -34,6 +34,7 @@ dependencies:
   permission_handler: ^8.2.2
   provider: ^6.0.1
   pull_to_refresh: ^2.0.0
+  rflutter_alert: ^2.0.4
   shared_preferences: ^2.0.8
   sizer: ^2.0.15
   webview_flutter: ^2.1.2

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_starterpack_jelly/utils/colors.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 // introduction screen
 const kBodyStyle = TextStyle(
@@ -71,4 +72,23 @@ const kInputDecoration = InputDecoration(
       Radius.circular(32.0),
     ),
   ),
+);
+
+var alertStyle = AlertStyle(
+  animationType: AnimationType.fromTop,
+  isCloseButton: false,
+  isOverlayTapDismiss: false,
+  descStyle: TextStyle(fontWeight: FontWeight.bold),
+  descTextAlign: TextAlign.start,
+  animationDuration: Duration(milliseconds: 400),
+  alertBorder: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(0.0),
+    side: BorderSide(
+      color: Colors.grey,
+    ),
+  ),
+  titleStyle: TextStyle(
+    color: Colors.red,
+  ),
+  alertAlignment: Alignment.topCenter,
 );

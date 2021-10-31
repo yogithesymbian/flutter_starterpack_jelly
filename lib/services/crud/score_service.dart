@@ -53,10 +53,21 @@ class ScoreService {
 
   Future<dynamic> deleteData(int id) async {
     // debug
-    print('uri : $uriData/$id');
+    print('uri : $uriData/$id/1');
     // set uri
     _networkingHelper = NetworkingHelper(
-      url: '$uriData/$id',
+      url: '$uriData/$id/1',
+    );
+    // execute action
+    return await _networkingHelper?.deleteData();
+  }
+
+  Future<dynamic> unDeleteData(int id) async {
+    // debug
+    print('uri : $uriData/$id/null');
+    // set uri
+    _networkingHelper = NetworkingHelper(
+      url: '$uriData/$id/null',
     );
     // execute action
     return await _networkingHelper?.deleteData();

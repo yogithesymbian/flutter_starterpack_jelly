@@ -1,10 +1,14 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_starterpack_jelly/components/jelly_alert.dart';
 import 'package:flutter_starterpack_jelly/models/scores/score_brain.dart';
 import 'package:flutter_starterpack_jelly/models/scores/score_data_response.dart';
 import 'package:flutter_starterpack_jelly/services/crud/score_service.dart';
 import 'package:flutter_starterpack_jelly/utils/constanta.dart';
 import 'package:provider/src/provider.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:sizer/sizer.dart';
 
 class DetailCrudScreen extends StatelessWidget {
@@ -104,7 +108,7 @@ class DetailCrudScreen extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton.icon(
                     onPressed: () {
-                      deleteData(scoreBrainR, detail);
+                      deleteData(scoreBrainR, detail, context);
                       deleteDone(context);
                     },
                     icon: Icon(Icons.delete),
@@ -126,9 +130,40 @@ class DetailCrudScreen extends StatelessWidget {
     );
   }
 
-  void deleteData(ScoreBrain scoreBrainR, Results? detail) {
-    scoreBrainR.deleteData(detail);
-    // TODO CALL API DELETE
+  void deleteData(
+      ScoreBrain scoreBrainR, Results? detail, BuildContext context) async {
+    final id = detail?.id;
+    if (id != null) {
+      scoreBrainR.deleteData(detail);
+      try {
+        final res = await _scoreService.deleteData(id);
+        print(res);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Yay! A SnackBar!'),
+            action: SnackBarAction(
+              textColor: Colors.red,
+              label: '',
+              onPressed: () {
+                // Some code to undo the change.
+              },
+            ),
+          ),
+        );
+      } catch (err) {}
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error'),
+          action: SnackBarAction(
+            label: '',
+            onPressed: () {
+              // Some code to undo the change.
+            },
+          ),
+        ),
+      );
+    }
   }
 
   void deleteDone(BuildContext context) {
@@ -136,10 +171,21 @@ class DetailCrudScreen extends StatelessWidget {
     Navigator.pop(context);
   }
 
-  void updateData(ScoreBrain scoreBrainR, Results? detail) {
-    detail?.score = double.parse(taskMsgController.text);
-    scoreBrainR.updateData(detail);
-    // TODO CALL API UPDATE
+  void updateData(ScoreBrain scoreBrainR, Results? detail) async {
+    final id = detail?.id;
+    if (id != null) {
+      detail?.score = double.parse(taskMsgController.text);
+      scoreBrainR.updateData(detail);
+      try {
+        final body = {'score': double.parse(taskMsgController.text)};
+        final res = await _scoreService.putData(jsonEncode(body), id);
+        print(res);
+      } catch (err) {
+        print('err $err');
+      }
+    } else {
+      print('null data');
+    }
   }
 
   void updateDone(BuildContext context) {

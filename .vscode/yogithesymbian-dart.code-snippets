@@ -256,5 +256,23 @@
       "final ${1:name}BrainW = context.watch<${2:Name}Brain>();"
     ],
     "description": "context provider watch"
+  },
+  "snackbar show": {
+    "prefix": "snackbar-show",
+    "body": [
+      "ScaffoldMessenger.of(context).showSnackBar(",
+      "  SnackBar(",
+      "    content: Text('${1:message}'),",
+      "    action: SnackBarAction(",
+      "      // textColor: ,",
+      "      label: '${2:label}',",
+      "      onPressed: () {",
+      "        ${3:function} // Some code to undo the change.",
+      "      },",
+      "    ),",
+      "  ),",
+      ");"
+    ],
+    "description": "snackbar show"
   }
 }

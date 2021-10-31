@@ -4,8 +4,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_starterpack_jelly/models/midtrans/midtrans_brain.dart';
-import 'package:flutter_starterpack_jelly/screens/yogithesymbian/webview/config/navigation_controller.dart';
-import 'package:flutter_starterpack_jelly/screens/yogithesymbian/webview/config/sample_menu.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional/webview/config/navigation_controller.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional/webview/config/sample_menu.dart';
 import 'package:provider/src/provider.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
