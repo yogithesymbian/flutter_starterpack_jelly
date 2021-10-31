@@ -1,5 +1,7 @@
 # flutter_starterpack_jelly
 
+![flutter_starterpack_jelly](assets/images/flutterstaterpackjelly.png)
+
 ```
 git clone https://github.com/yogithesymbian/flutter_starterpack_jelly.git
 ```

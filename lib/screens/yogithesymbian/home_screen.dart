@@ -106,6 +106,35 @@ class _HomeScreenState extends State<HomeScreen> {
                     ],
                   ),
                   PaymentScreen(),
+                  const SizedBox(
+                    height: 8.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          height: 8.0,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 4.0,
+                      ),
+                      Text('(C) Yogi Arif Widodo (yogithesymbian)'),
+                      const SizedBox(
+                        width: 4.0,
+                      ),
+                      Expanded(
+                        child: Divider(
+                          height: 8.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 8.0,
+                  ),
                 ],
               ),
             ),
