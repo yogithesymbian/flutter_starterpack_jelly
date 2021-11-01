@@ -8,6 +8,9 @@ import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/crud/
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/permission_handler/permission_handler_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional/webview/payment/webview_midtrans_payment_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional/webview/webview_sample_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/ui/book/book_brain.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/ui/book/detail_book_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/ui/book/main_book_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/ui/responsive_card/main_responsive_screen.dart';
 import 'package:flutter_starterpack_jelly/utils/anim/transition_route_observer.dart';
 import 'package:flutter_starterpack_jelly/utils/class/custom_theme.dart';
@@ -36,6 +39,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<ScoreBrain>(
           create: (context) => ScoreBrain(),
           lazy: false,
+        ),
+        ChangeNotifierProvider<BookBrain>(
+          create: (context) => BookBrain(),
+          lazy: false,
         )
       ],
       child: Sizer(builder: (context, orientation, deviceType) {
@@ -58,6 +65,8 @@ class MyApp extends StatelessWidget {
             MainCrudScreen.id: (context) => MainCrudScreen(),
             MainResponsiveScreen.id: (context) => MainResponsiveScreen(),
             PermissionHandlerScreen.id: (context) => PermissionHandlerScreen(),
+            MainBookScreen.id: (context) => MainBookScreen(),
+            DetailBookScreen.id: (context) => DetailBookScreen(),
           },
         );
       }),

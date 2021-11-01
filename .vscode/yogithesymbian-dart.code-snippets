@@ -274,5 +274,33 @@
       ");"
     ],
     "description": "snackbar show"
+  },
+  "image assets": {
+    "prefix": "ima-assets",
+    "body": [
+      "Image.asset(",
+      "  ${1:asset_name} ?? ${2:if_null} ,",
+      "  // fit: BoxFit.cover,",
+      "),"
+    ],
+    "description": "image assets"
+  },
+  "const size box height": {
+    "prefix": "size-box-height-const",
+    "body": [
+      "const SizedBox(",
+      " height: ${1:height},",
+      "),"
+    ],
+    "description": "const size box height"
+  },
+  "const size box width": {
+    "prefix": "size-box-width-const",
+    "body": [
+      "const SizedBox(",
+      " width: ${1:height},",
+      "),"
+    ],
+    "description": "const size box width"
   }
 }

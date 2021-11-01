@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/payment_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/ui/book/main_book_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/ui/responsive_card/main_responsive_screen.dart';
 import 'package:flutter_starterpack_jelly/services/reports/report_service.dart';
 import 'package:flutter_starterpack_jelly/utils/constanta.dart';
@@ -93,10 +94,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Expanded(
                         child: ElevatedButton.icon(
-                          onPressed: () {},
-                          icon: Icon(Icons.block),
+                          onPressed: () {
+                            Navigator.pushNamed(context, MainBookScreen.id);
+                          },
+                          icon: Icon(Icons.book),
                           label: Text(
-                            '',
+                            'Book Concept',
                             style: kTitleText.copyWith(
                               fontSize: 11.0,
                             ),
