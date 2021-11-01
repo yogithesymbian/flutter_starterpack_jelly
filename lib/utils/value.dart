@@ -2,9 +2,9 @@ const kApiMidtransSandbox =
     'https://app.sandbox.midtrans.com/snap/v1/transactions';
 const kApiKey = 'ec897e425944c2374c8da90a5f87015a';
 // const kApiUri = 'http://x.x.x.x:3003';
-// const kApiUri = 'http://192.168.1.5:3001';
+const kApiUri = 'http://192.168.1.5:3001';
 // const kApiUri = 'http://192.168.43.20:3001';
-const kApiUri = 'http://192.168.248.190:3001';
+// const kApiUri = 'http://192.168.248.190:3001';
 const kBearer = 'bearer';
 const kEmail = 'email';
 const kPass = 'password';

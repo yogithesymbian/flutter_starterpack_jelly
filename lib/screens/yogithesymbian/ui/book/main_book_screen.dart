@@ -255,26 +255,26 @@ class _MainBookScreenState extends State<MainBookScreen> {
                                       fontSize: 20.0,
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 20.0,
-                                  ),
-                                  ElevatedButton.icon(
-                                    onPressed: () {
-                                      bookBrainR.position(index);
-                                      Navigator.pushNamed(
-                                          context, DetailBookScreen.id);
-                                    },
-                                    icon: Icon(Icons.open_in_browser),
-                                    label: Text(
-                                      'Open Book',
-                                      style: TextStyle(
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                    ),
-                                    style: ElevatedButton.styleFrom(
-                                      primary: Colors.black26,
-                                    ),
-                                  )
+                                  // const SizedBox(
+                                  //   height: 20.0,
+                                  // ),
+                                  // ElevatedButton.icon(
+                                  //   onPressed: () {
+                                  //     bookBrainR.position(index);
+                                  //     Navigator.pushNamed(
+                                  //         context, DetailBookScreen.id);
+                                  //   },
+                                  //   icon: Icon(Icons.open_in_browser),
+                                  //   label: Text(
+                                  //     'Open Book',
+                                  //     style: TextStyle(
+                                  //       fontStyle: FontStyle.italic,
+                                  //     ),
+                                  //   ),
+                                  //   style: ElevatedButton.styleFrom(
+                                  //     primary: Colors.black26,
+                                  //   ),
+                                  // )
                                 ],
                               ),
                             ),
