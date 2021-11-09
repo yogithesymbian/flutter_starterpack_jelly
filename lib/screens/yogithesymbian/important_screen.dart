@@ -3,6 +3,7 @@ import 'package:flutter_starterpack_jelly/screens/importants/auth/login_screen.d
 import 'package:flutter_starterpack_jelly/screens/importants/introduction/on_boarding_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/splash/splash_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/crud/main_crud_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/intent/intent_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/permission_handler/permission_handler_screen.dart';
 import 'package:flutter_starterpack_jelly/utils/constanta.dart';
 
@@ -63,7 +64,10 @@ class ImportantScreen extends StatelessWidget {
             Expanded(
               child: ElevatedButton.icon(
                 onPressed: () {
-                  Navigator.pushNamed(context, OnBoardingScreen.id);
+                  Navigator.pushNamed(
+                    context,
+                    OnBoardingScreen.id,
+                  );
                 },
                 icon: Icon(Icons.filter_tilt_shift),
                 label: Text(
@@ -264,6 +268,29 @@ class ImportantScreen extends StatelessWidget {
                 ),
               ),
             )
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    IntentScreen.id,
+                    arguments: {"id": 123},
+                  );
+                },
+                icon: Icon(Icons.indeterminate_check_box),
+                label: Text(
+                  'Intent With Data',
+                  textAlign: TextAlign.center,
+                  style: kTitleText.copyWith(
+                    fontSize: 11.0,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ],

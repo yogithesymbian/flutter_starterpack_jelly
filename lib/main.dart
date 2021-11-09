@@ -23,7 +23,9 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: CustomTheme.lightThemeV2,
-          navigatorObservers: [TransitionRouteObserver()],
+          navigatorObservers: [
+            TransitionRouteObserver(),
+          ],
           initialRoute: SplashScreen.id,
           onGenerateRoute: onGenerateRoute,
         );

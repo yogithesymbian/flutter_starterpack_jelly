@@ -44,6 +44,7 @@ class _MainBookScreenState extends State<MainBookScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     final bookHeight = size.height * 0.45;
     final bookWidth = size.width * 0.6;
     final bookBrainW = context.watch<BookBrain>();
@@ -221,7 +222,7 @@ class _MainBookScreenState extends State<MainBookScreen> {
                                     // createRectTween: _createRectTween,
                                     child: Image.asset(
                                       book.image ?? bookAppBackground,
-                                      fit: BoxFit.cover,
+                                      // fit: BoxFit.cover,
                                       height: bookHeight,
                                       width: bookWidth,
                                     ),

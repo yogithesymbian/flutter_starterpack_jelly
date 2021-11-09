@@ -27,7 +27,7 @@ class BookBrain with ChangeNotifier {
     Book(
       title: 'The Junble Book',
       author: 'Rudyard Kipling',
-      image: '$_bookAppAsset/book4.jpg',
+      image: '$_bookAppAsset/imt.jpg',
     ),
     Book(
       title: 'The Maker of Swans',

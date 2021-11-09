@@ -302,5 +302,27 @@
       "),"
     ],
     "description": "const size box width"
+  },
+  "navigator intent with data": {
+    "prefix": "nav-intent-with-data",
+    "body": [
+      "Navigator.pushNamed(",
+      "  context,",
+      "  ${1:NameScreen.id},",
+      "  arguments: {",
+      "    \"id\": ${1:data_id}",
+      "  },",
+      ");"
+    ],
+    "description": "navigator intent with data"
+  },
+  "route define with argument | data": {
+    "prefix": "route-define-args",
+    "body": [
+      "${1:NameScreen}.id: (context, {arguments}) => ${1:NameScreen}(",
+      " arguments: arguments,",
+      "),"
+    ],
+    "description": "route define with argument | data"
   }
 }
