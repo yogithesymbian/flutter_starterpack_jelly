@@ -222,7 +222,7 @@ class _MainBookScreenState extends State<MainBookScreen> {
                                     // createRectTween: _createRectTween,
                                     child: Image.asset(
                                       book.image ?? bookAppBackground,
-                                      // fit: BoxFit.cover,
+                                      fit: BoxFit.cover,
                                       height: bookHeight,
                                       width: bookWidth,
                                     ),

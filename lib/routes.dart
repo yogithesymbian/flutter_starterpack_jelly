@@ -5,6 +5,7 @@ import 'package:flutter_starterpack_jelly/screens/importants/auth/login_screen.d
 import 'package:flutter_starterpack_jelly/screens/importants/introduction/on_boarding_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/crud/main_crud_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/intent/intent_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/list_view/list_view_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/permission_handler/permission_handler_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional/webview/payment/webview_midtrans_payment_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/optional/webview/webview_sample_screen.dart';
@@ -31,6 +32,7 @@ final routes = {
   IntentScreen.id: (context, {arguments}) => IntentScreen(
         arguments: arguments,
       ),
+  ListViewScreen.id: (context) => ListViewScreen(),
 };
 
 final onGenerateRoute = (RouteSettings settings) {

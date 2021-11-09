@@ -81,6 +81,7 @@ class _MainCrudScreenState extends State<MainCrudScreen> {
           showModalBottomSheet(
             context: context,
             isScrollControlled: true, // modal take up the full screen:
+            isDismissible: true,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
                 top: Radius.circular(30.0),

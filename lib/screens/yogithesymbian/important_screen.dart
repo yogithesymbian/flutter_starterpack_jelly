@@ -4,6 +4,7 @@ import 'package:flutter_starterpack_jelly/screens/importants/introduction/on_boa
 import 'package:flutter_starterpack_jelly/screens/importants/splash/splash_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/crud/main_crud_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/intent/intent_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/list_view/list_view_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/important/permission_handler/permission_handler_screen.dart';
 import 'package:flutter_starterpack_jelly/utils/constanta.dart';
 
@@ -291,6 +292,24 @@ class ImportantScreen extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(
+              width: 8.0,
+            ),
+            Expanded(
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, ListViewScreen.id);
+                },
+                icon: Icon(Icons.chat_rounded),
+                label: Text(
+                  'List',
+                  textAlign: TextAlign.center,
+                  style: kTitleText.copyWith(
+                    fontSize: 11.0,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ],
