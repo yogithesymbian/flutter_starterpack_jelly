@@ -9,8 +9,18 @@ class IntentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Text('string ${arguments != null ? arguments['id'] : 'null'}'),
+      appBar: AppBar(
+        title: Text('Intent With Data'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            child: Center(
+                child: Text(
+                    'string ${arguments != null ? arguments['id'] : 'null'}')),
+          ),
+        ],
       ),
     );
   }
