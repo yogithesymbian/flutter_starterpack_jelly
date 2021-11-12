@@ -41,20 +41,60 @@ class CustomTheme {
         color: kPrimaryColor,
       ),
       textSelectionTheme: TextSelectionThemeData(cursorColor: kAccentColor),
-      fontFamily: 'SourceSansPro',
+      fontFamily: 'DancingScript',
       textTheme: TextTheme(
+        bodyText1: TextStyle(
+          // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+          fontFamily: 'DancingScript',
+        ),
+        bodyText2: TextStyle(
+          // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+          fontFamily: 'DancingScript',
+        ),
+        headline1: TextStyle(
+          // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+          fontFamily: 'DancingScript',
+        ),
+        headline2: TextStyle(
+          // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+          fontFamily: 'DancingScript',
+        ),
         headline3: TextStyle(
-          fontFamily: 'OpenSans',
+          fontFamily: 'DancingScript',
           fontSize: 45.0,
           fontWeight: FontWeight.w400,
           color: Colors.white,
         ),
+        headline4: TextStyle(
+          // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+          fontFamily: 'DancingScript',
+        ),
+        headline5: TextStyle(
+          // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+          fontFamily: 'DancingScript',
+        ),
+        headline6: TextStyle(
+          // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+          fontFamily: 'DancingScript',
+        ),
+        subtitle1: TextStyle(
+          // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+          fontFamily: 'DancingScript',
+        ),
+        subtitle2: TextStyle(
+          // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+          fontFamily: 'DancingScript',
+        ),
+        overline: TextStyle(
+          // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
+          fontFamily: 'DancingScript',
+        ),
         button: TextStyle(
           // OpenSans is similar to NotoSans but the uppercases look a bit better IMO
-          fontFamily: 'OpenSans',
+          fontFamily: 'DancingScript',
         ),
         caption: TextStyle(
-          fontFamily: 'NotoSans',
+          fontFamily: 'DancingScript',
           fontSize: 12.0,
           fontWeight: FontWeight.normal,
           color: Colors.black,

@@ -23,6 +23,11 @@ const kPageDecoration = PageDecoration(
   imagePadding: EdgeInsets.zero,
 );
 
+const kSmallText = TextStyle(
+  fontSize: 10.0,
+  color: Colors.grey,
+);
+
 const kNormalText = TextStyle(
   color: Colors.black,
   fontSize: 14.0,

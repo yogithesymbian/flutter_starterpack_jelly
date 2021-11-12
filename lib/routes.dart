@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starterpack_jelly/screens/importants/auth/forgot_password_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/importants/auth/otp_screen.dart';
+import 'package:flutter_starterpack_jelly/screens/importants/auth/register_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/splash/splash_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/yogithesymbian/home_screen.dart';
 import 'package:flutter_starterpack_jelly/screens/importants/auth/login_screen.dart';
@@ -33,6 +36,9 @@ final routes = {
         arguments: arguments,
       ),
   ListViewScreen.id: (context) => ListViewScreen(),
+  RegisterScreen.id: (context) => RegisterScreen(),
+  ForgotPasswordScreen.id: (context) => ForgotPasswordScreen(),
+  OtpScreen.id: (context) => OtpScreen(),
 };
 
 final onGenerateRoute = (RouteSettings settings) {
